@@ -25,4 +25,4 @@ $obj->store($AppUI);
 
 
 $success = 'm=system&a=viewmods';
-    $AppUI->redirect($success);
+$AppUI->redirect($success);

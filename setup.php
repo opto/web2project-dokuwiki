@@ -3,10 +3,6 @@ if (!defined('W2P_BASE_DIR')){
   die('You should not access this file directly.');
 }
 
-
-
-
-
 /**
  * Name:			Dokuwiki
  * Directory: dokuwiki
@@ -46,47 +42,29 @@ class CSetupDokuwiki
 			
 			PRIMARY KEY  (dokuwiki_id))
 			ENGINE = MYISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci';
-		$q->createDefinition($sql);
-		$q->exec();
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-                $q->addInsert('dokuwiki_URL_use','dokuwiki_base_URL');
-                $q->addInsert('dokuwiki_URL','http://localhost/dokuwiki/');
-		$q->exec();
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-                $q->addInsert('dokuwiki_URL','http://localhost/dwiki/doku.php?id=projects');
-                $q->addInsert('dokuwiki_URL_use','dokuwiki_projects_namespace');
-		$q->exec();
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-                $q->addInsert('dokuwiki_URL','');
-                $q->addInsert('dokuwiki_URL_use','dokuwiki_tasks_sub_namespace');
-		$q->exec();
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-                $q->addInsert('dokuwiki_URL','http://localhost/dwiki/doku.php?id=contacts');
-                $q->addInsert('dokuwiki_URL_use','dokuwiki_contacs_namespace');
-		$q->exec();
-/*                
-                $f['dokuwiki_URL']='';
-//                $f['dw.dokuwiki_id']=1;
-                $f['dokuwiki_URL_use']='dokuwiki_base_URL';
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-//                $f['dw.dokuwiki_id']=2;
-                $f['dw.dokuwiki_URL_use']='dokuwiki_projects_namespace';
-                $q->addInsert($f);
-		$q->exec();
-                $q->clear();
-                $q->addTable('dokuwiki','dw');
-//                $f['dw.dokuwiki_id']=3;
-                $f['dw.dokuwiki_URL_use']='dokuwiki_tasks_namespace';
-                $q->addInsert($f);
-		$q->exec();
-                    
+        $q->createDefinition($sql);
+        $q->exec();
+        $q->clear();
+        $q->addTable('dokuwiki','dw');
+        $q->addInsert('dokuwiki_URL_use','dokuwiki_base_URL');
+        $q->addInsert('dokuwiki_URL','http://localhost/dokuwiki/');
+        $q->exec();
+        $q->clear();
+        $q->addTable('dokuwiki','dw');
+        $q->addInsert('dokuwiki_URL','http://localhost/dwiki/doku.php?id=projects');
+        $q->addInsert('dokuwiki_URL_use','dokuwiki_projects_namespace');
+        $q->exec();
+        $q->clear();
+        $q->addTable('dokuwiki','dw');
+        $q->addInsert('dokuwiki_URL','');
+        $q->addInsert('dokuwiki_URL_use','dokuwiki_tasks_sub_namespace');
+        $q->exec();
+        $q->clear();
+        $q->addTable('dokuwiki','dw');
+        $q->addInsert('dokuwiki_URL','http://localhost/dwiki/doku.php?id=contacts');
+        $q->addInsert('dokuwiki_URL_use','dokuwiki_contacs_namespace');
+        $q->exec();
 
-*/
         $perms = $AppUI->acl();
         return $perms->registerModule('Dokuwiki', 'dokuwiki');
 	}
@@ -110,7 +88,6 @@ class CSetupDokuwiki
 		$q->dropTable('dokuwiki');
 		$q->exec();
 
-/**/	
         $perms = $AppUI->acl();
         return $perms->unregisterModule('dokuwiki');
 	}
@@ -121,6 +98,4 @@ class CSetupDokuwiki
         $AppUI->redirect('m=dokuwiki&a=configure');
         return true;
     }
-
-
 }

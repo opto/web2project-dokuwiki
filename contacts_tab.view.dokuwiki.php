@@ -13,14 +13,11 @@ if (!$perms->checkModuleItem('dokuwiki', 'access')) {
 
 $dwiki= new CDokuwiki();
 
-
 //to get pagename from project  name
 $URL=$dwiki->combineContactURL($cont->contact_last_name,6);
 //uncomment to get pagename from project short name
 //$URL=$dwiki->combineProjectURL($proj->project_short_name,6);
 ?>
-
- <iframe src="<?php echo $URL ;?>" width="990" height="1200" frameborder="0">
+<iframe src="<?php echo $URL ;?>" width="990" height="1200" frameborder="0">
 
 </iframe>
-<?php /* $Id$ $URL$ */
