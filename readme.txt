@@ -10,7 +10,7 @@ LICENSE
 The Dokuwiki module was built by Klaus Buecher and is released here
 under modified BSD license (see GNU.org).
 
-Copyright (c) 2012 Klaus Buecher (Opto)
+Copyright (c) 2012/2013 Klaus Buecher (Opto)
 
 XMLRPC is used to access Dokuwiki, see xmlrpc.inc for details of license
 
@@ -25,11 +25,19 @@ Open Issues:
 * no ACL for Dokuwiki yet
 * only partly localisation of strings
 
-INSTALL
+
+
+
+
+INSTALL/UPGRADE
 
 =====================================
 
 0.  Previous installations of this module can simply be overwritten.
+    Version 1.0.1 fixes a problem with the permission handling (wrong field name due to changes in core).
+    It might be safer to deinstall/reinstall for 1.0.1. Before deinstalling, write down settings for the dokuwiki
+    URL (sysadmin->modules->dokuwiki->configure/settings).
+    If any individual permissions had been set, they might need to be reapplied.
 
 1.  To install this module, please follow the standard module installation
 procedure.  Download the latest version and unzip this directory into your

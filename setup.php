@@ -13,7 +13,7 @@ if (!defined('W2P_BASE_DIR')){
 
 $config = array();
 $config['mod_name']        = 'Dokuwiki';			    // name the module
-$config['mod_version']     = '1.0.0';			      	// add a version number
+$config['mod_version']     = '1.0.1';			      	// add a version number
 $config['mod_directory']   = 'dokuwiki';             // tell web2project where to find this module
 $config['mod_setup_class'] = 'CSetupDokuwiki';		// the name of the PHP setup class (used below)
 $config['mod_type']        = 'user';				      // 'core' for modules distributed with w2p by standard, 'user' for additional modules
@@ -25,7 +25,7 @@ $config['mod_main_class']  = 'CDokuwiki';
 
 $config['permissions_item_table'] = 'dokuwiki';
 $config['permissions_item_field'] = 'dokuwiki_id';
-$config['permissions_item_label'] = 'dokuwiki_title';
+$config['permissions_item_label'] = '$dokuwiki_URL_use';
 
 class CSetupDokuwiki
 {
